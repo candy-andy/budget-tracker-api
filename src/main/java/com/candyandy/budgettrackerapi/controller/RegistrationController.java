@@ -18,7 +18,7 @@ public class RegistrationController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/registration")
+    @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
     public UserRegistrationDto register(@RequestBody @Valid UserRegistrationDto userRegistrationDto) {
         userService.save(userRegistrationDto);
