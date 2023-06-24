@@ -1,13 +1,13 @@
-package com.candyandy.budgettrackerapi.service.user;
+package com.candyandy.budgettrackerapi.user.service;
 
-import com.candyandy.budgettrackerapi.dto.UserRegistrationDto;
-import com.candyandy.budgettrackerapi.entity.User;
-import com.candyandy.budgettrackerapi.repository.UserRepository;
+import com.candyandy.budgettrackerapi.user.dto.UserRegistrationDto;
+import com.candyandy.budgettrackerapi.user.entity.User;
+import com.candyandy.budgettrackerapi.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements IUserService {
+public class UserService {
 
     @Autowired
     private UserRepository userRepository;

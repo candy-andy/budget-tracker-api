@@ -1,4 +1,4 @@
-package com.candyandy.budgettrackerapi.dto;
+package com.candyandy.budgettrackerapi.user.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;

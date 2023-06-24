@@ -1,7 +1,7 @@
-package com.candyandy.budgettrackerapi.controller;
+package com.candyandy.budgettrackerapi.user.controller;
 
-import com.candyandy.budgettrackerapi.dto.UserRegistrationDto;
-import com.candyandy.budgettrackerapi.service.user.UserService;
+import com.candyandy.budgettrackerapi.user.dto.UserRegistrationDto;
+import com.candyandy.budgettrackerapi.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/user")
 public class RegistrationController {
 
     @Autowired

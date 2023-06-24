@@ -1,6 +1,6 @@
-package com.candyandy.budgettrackerapi.repository;
+package com.candyandy.budgettrackerapi.user.repository;
 
-import com.candyandy.budgettrackerapi.entity.User;
+import com.candyandy.budgettrackerapi.user.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
