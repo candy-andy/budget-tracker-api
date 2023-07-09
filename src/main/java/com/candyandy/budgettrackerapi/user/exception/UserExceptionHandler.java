@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Map;
 
 @RestControllerAdvice
-public class UserExceptionHandler {
+public final class UserExceptionHandler {
 
     @ExceptionHandler(SQLIntegrityConstraintViolationException.class)
     ResponseEntity<Map<String, String>> handleException(SQLIntegrityConstraintViolationException e) {
@@ -18,6 +18,6 @@ public class UserExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.CONFLICT)
-                .body(Collections.singletonMap("message", e.getMessage()));
+                .body(Collections.singletonMap("error", e.getMessage()));
     }
 }

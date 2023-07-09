@@ -12,13 +12,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public UserRegistrationDto save(UserRegistrationDto userRegistrationDto) {
+    public void createUser(UserRegistrationDto userRegistrationDto) {
         User user = new User();
         user.setEmail(userRegistrationDto.email());
         user.setPassword(userRegistrationDto.password());
 
         userRepository.save(user);
-
-        return userRegistrationDto;
     }
 }

@@ -23,7 +23,7 @@ public class RegistrationController {
 
     @PostMapping("/register")
     public ResponseEntity<Map<String, String>> register(@RequestBody @Valid UserRegistrationDto userRegistrationDto) {
-        userService.save(userRegistrationDto);
+        userService.createUser(userRegistrationDto);
 
         return ResponseEntity
                 .status(HttpStatus.CREATED)
