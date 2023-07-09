@@ -1,7 +1,7 @@
 package com.candyandy.budgettrackerapi.auth.service;
 
-import com.candyandy.budgettrackerapi.auth.dto.UserLoginDto;
-import com.candyandy.budgettrackerapi.user.dto.UserDetailsDto;
+import com.candyandy.budgettrackerapi.auth.dto.LoginDto;
+import com.candyandy.budgettrackerapi.user.dto.UserDto;
 import com.candyandy.budgettrackerapi.user.entity.User;
 import com.candyandy.budgettrackerapi.user.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -17,14 +17,14 @@ public class AuthService {
     @Autowired
     private UserRepository userRepository;
 
-    public UserDetailsDto loginUser(UserLoginDto userLoginDto) throws AuthException {
-        User user = userRepository.findByEmail(userLoginDto.email())
-                .orElseThrow(() -> new EntityNotFoundException(String.format(NOT_FOUND_MESSAGE, userLoginDto.email())));
+    public UserDto login(LoginDto loginDto) throws AuthException {
+        User user = userRepository.findByEmail(loginDto.email())
+                .orElseThrow(() -> new EntityNotFoundException(String.format(NOT_FOUND_MESSAGE, loginDto.email())));
 
-        if (!user.getPassword().equals(userLoginDto.password())) {
+        if (!user.getPassword().equals(loginDto.password())) {
             throw new AuthException("Wrong password");
         }
 
-        return new UserDetailsDto(user.getEmail());
+        return new UserDto(user.getEmail());
     }
 }

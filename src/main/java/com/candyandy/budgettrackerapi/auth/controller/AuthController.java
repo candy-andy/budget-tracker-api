@@ -1,8 +1,8 @@
 package com.candyandy.budgettrackerapi.auth.controller;
 
 import com.candyandy.budgettrackerapi.auth.service.AuthService;
-import com.candyandy.budgettrackerapi.user.dto.UserDetailsDto;
-import com.candyandy.budgettrackerapi.auth.dto.UserLoginDto;
+import com.candyandy.budgettrackerapi.user.dto.UserDto;
+import com.candyandy.budgettrackerapi.auth.dto.LoginDto;
 import jakarta.security.auth.message.AuthException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +20,9 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/login")
-    public ResponseEntity<UserDetailsDto> login(@RequestBody @Valid UserLoginDto userLoginDto) throws AuthException {
-        UserDetailsDto userDetailsDto = authService.loginUser(userLoginDto);
+    public ResponseEntity<UserDto> login(@RequestBody @Valid LoginDto loginDto) throws AuthException {
+        UserDto userDto = authService.login(loginDto);
 
-        return ResponseEntity.ok(userDetailsDto);
+        return ResponseEntity.ok(userDto);
     }
 }

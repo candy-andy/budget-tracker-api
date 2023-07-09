@@ -1,13 +1,13 @@
 package com.candyandy.budgettrackerapi.user.dto;
 
-public class UserDetailsDto {
+public class UserDto {
 
     private String email;
 
-    public UserDetailsDto() {
+    public UserDto() {
     }
 
-    public UserDetailsDto(String email) {
+    public UserDto(String email) {
         this.email = email;
     }
 
