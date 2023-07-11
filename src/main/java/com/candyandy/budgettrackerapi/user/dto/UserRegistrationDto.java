@@ -7,6 +7,7 @@ public record UserRegistrationDto(
         @NotNull
         @Email
         String email,
+
         @NotNull
         String password) {
 }
